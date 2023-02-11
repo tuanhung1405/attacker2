@@ -96,9 +96,9 @@ def main():
     form = sl.form('Customer Details')
     C_name = form.text_input('Name')
     col1,col2,col3 = form.columns(3)
-    C_sex= S_DICT[col1.radio('Sex',options=['Male','Female'])]
-    C_marg = M_DICT[col2.radio('Marital status',options=['Married','Single','Others'])]
-    C_edu = E_DICT[col3.radio('Education',options=['Graduate school','University','High school','Others'])]
+    #C_sex= S_DICT[col1.radio('Sex',options=['Male','Female'])]
+    #C_marg = M_DICT[col2.radio('Marital status',options=['Married','Single','Others'])]
+    #C_edu = E_DICT[col3.radio('Education',options=['Graduate school','University','High school','Others'])]
     col1,col2 = form.columns(2)
     C_age = col1.number_input('Age')
     C_Limit = col2.number_input('Limit Amout in $')
@@ -137,7 +137,8 @@ def main():
     
     # Creating new feature Average Bill Amount 
     avg_bill_amt = np.mean(BAmt1+BAmt2+BAmt3+BAmt4+BAmt5+BAmt6)
-    features=[C_Limit,C_sex,C_edu,C_marg,C_age,pay1,pay2,pay3,pay4,pay5,pay6,BAmt1,BAmt2,BAmt3,BAmt4,BAmt5,BAmt6,PAmt1,PAmt2,PAmt3,PAmt4,PAmt5,PAmt6,avg_bill_amt]
+    #features=[C_Limit,C_sex,C_edu,C_marg,C_age,pay1,pay2,pay3,pay4,pay5,pay6,BAmt1,BAmt2,BAmt3,BAmt4,BAmt5,BAmt6,PAmt1,PAmt2,PAmt3,PAmt4,PAmt5,PAmt6,avg_bill_amt]
+    features=[C_Limit,C_age,pay1,pay2,pay3,pay4,pay5,pay6,BAmt1,BAmt2,BAmt3,BAmt4,BAmt5,BAmt6,PAmt1,PAmt2,PAmt3,PAmt4,PAmt5,PAmt6,avg_bill_amt]
     features_s = scaler.transform(np.array(features,ndmin=2))
     pred = model.predict(features_s)
 
