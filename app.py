@@ -28,9 +28,9 @@ S_file = open('scaler.pkl','rb')
 scaler = pickle.load(S_file)
 
 # creating 4 Dicts which is used to convert to str to int befor giveing input to ML module
-S_DICT = {'Male':1,'Female':2}
-M_DICT = {'Married':1,'Single':2,'Others':3}
-E_DICT ={'Graduate school':1,'University':2,'High school':3,'Others':4}
+#S_DICT = {'Male':1,'Female':2}
+#M_DICT = {'Married':1,'Single':2,'Others':3}
+#E_DICT ={'Graduate school':1,'University':2,'High school':3,'Others':4}
 PAY_DICT= {'Zero Bill':0,'Paid duly':-1,'1 Month Delay':1,'2 Months Delay':2,'3 Months Delay':3,'4 Months Delay':4,'5 Months Delay':5,'6 Months Delay':6,'7 Months Delay':7,'8 Months Delay':8,'9 Months & Above Delay':9}
 
 # while loop for Dynamic Months
